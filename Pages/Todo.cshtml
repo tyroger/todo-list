@@ -1,0 +1,47 @@
+﻿@page
+@using todolist.Models
+@model todolist.Pages.TodoModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1>Todo List</h1>
+<br>
+    <div class="container mt-3">
+
+        <div class="row">
+            <div class="col-6">
+                <label for="newTask">New task : </label>
+                <input type="text" name="newTask" id="">
+                <button type="submit">Add</button>
+            </div>
+        </div>
+        <br>
+        <div class="col mt-3">
+            <h5>Tasks list</h5>
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td>1</td>
+                        <td>going to bed</td>
+                        <td>Ongoing</td>
+                        <td> <button type="submit" class="btn btn-outline-info btn-sm">Change status</button></td>
+                        <td> <button type="submit" class="btn btn-outline-danger btn-sm">delete</button></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

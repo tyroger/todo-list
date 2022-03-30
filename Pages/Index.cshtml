@@ -24,20 +24,22 @@
                     <tr>
                         <th>id</th>
                         <th>Description</th>
-                        <th>Status</th>
+                        <th>Tast Complete</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-    
+    @foreach (var todo in Model.todos)
+                 {
                     <tr>
-                        <td>1</td>
-                        <td>going to bed</td>
-                        <td>Ongoing</td>
+                        <td>@todo.Id</td>
+                        <td>@todo.title</td>
+                        <td>@todo.isTaskComplete</td>
                         <td> <button type="submit" class="btn btn-outline-info btn-sm">Change status</button></td>
                         <td> <button type="submit" class="btn btn-outline-danger btn-sm">delete</button></td>
                     </tr>
+                 }
                 </tbody>
 
             </table>

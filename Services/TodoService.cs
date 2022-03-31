@@ -11,7 +11,7 @@ public static class TodoService
         TodoList = new List<Todo>
         {
         new Todo{Id = 1, title ="se lever"},
-        new Todo{Id = 2, title ="s'étirer"}
+        new Todo{Id = 2, title ="s'étirer", isTaskComplete=true}
         };
     }
 

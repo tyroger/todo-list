@@ -8,5 +8,6 @@ public class Todo
 
     [Required]
     public string? title { get; set; }
+    public string? description { get; set; }
     public bool isTaskComplete { get; set; }
 }

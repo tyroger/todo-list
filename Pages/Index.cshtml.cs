@@ -15,9 +15,14 @@ public class IndexModel : PageModel
     }
 
     public List<Todo> todos = new();
+    Todo newTodo = new Todo();
 
     public void OnGet()
     {
         todos = TodoService.GetTodos();
+    }
+
+    public void OnPOst()
+    {
     }
 }

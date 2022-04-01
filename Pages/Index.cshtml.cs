@@ -14,15 +14,30 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
+    [BindProperty]
+    public Todo NewTodo { get; set; }
     public List<Todo> todos = new();
-    Todo newTodo = new Todo();
-
     public void OnGet()
     {
-        todos = TodoService.GetTodos();
+        todos = TodoService.GetAllTodo();
+
     }
 
-    public void OnPOst()
+    public async Task<IActionResult> OnPostAsync()
     {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+
+        TodoService.AddNewTodo(NewTodo.title, NewTodo.description);
+        TodoService.ModifyTodoStatus(NewTodo.Id);
+
+        return RedirectToPage("./Index");
+    }
+
+    public bool checkForTaskComplete(Todo todo)
+    {
+        if (todo.isTaskComplete) return true; return false;
     }
 }

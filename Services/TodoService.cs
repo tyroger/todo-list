@@ -10,40 +10,48 @@ public static class TodoService
     {
         TodoList = new List<Todo>
         {
-        new Todo{Id = 1, title ="se lever"},
-        new Todo{Id = 2, title ="s'étirer", isTaskComplete=true}
+        new Todo{Id = 1, title ="se lever", isTaskComplete=true},
+        new Todo{Id = 2, title ="s'étirer"},
+        new Todo{Id = 3, title ="coder"}
         };
     }
 
-    //step 01 : list my Todos
-
-    public static List<Todo>? GetTodos() => TodoList;
-
-    // step 02 : change a todo state
-
-    public static bool ChangeTodoState(Todo todo)
+    public static List<Todo>? GetAllTodo()
     {
-        int index = TodoList.FindIndex(t => t.Id == todo.Id);
-        todo = TodoList[index];
-        todo.isTaskComplete = true;
-        return todo.isTaskComplete;
+        return TodoList;
     }
 
 
-
-    // TODO : 
-    // show detail of a todo
-    public static void ShowTodoDetail() { }
-
-
-    // TODO : 
-    // Add a new todo
-    public static void AddnewTodo(List<Todo> TodoList, string title)
+    public static Todo GetSpecificTodo(int Index)
     {
-        int newId = TodoList.Count + 1;
-        string newTitle = title;
-        Todo newTodo = new Todo { Id = newId, title = newTitle };
-        TodoList.Add(newTodo);
+        List<Todo>? todos = GetAllTodo();
+
+        foreach (Todo todo in todos)
+            if (todo.Id == Index)
+            {
+                return todo;
+            }
+        return null;
+    }
+
+
+    public static Todo ModifyTodoStatus(int Index)
+    {
+        Todo TodoToBeModified = GetSpecificTodo(Index);
+
+        TodoToBeModified.isTaskComplete = !TodoToBeModified.isTaskComplete;
+
+        return TodoToBeModified;
+    }
+
+
+    public static void AddNewTodo(string title, string description)
+    {
+        int newTtemNumber = TodoList.Count + 1;
+        string newtitle = title;
+        string newDescription = description;
+        Todo todoToBeAdded = new Todo { Id = newTtemNumber, title = newtitle, description = newDescription };
+        TodoList.Add(todoToBeAdded);
     }
 
 }

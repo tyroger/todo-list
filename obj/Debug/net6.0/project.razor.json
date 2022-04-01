@@ -16308,11 +16308,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/tyroger/labo/xcSharp/todolist/Pages/Todo.cshtml",
-      "TargetPath": "Pages\\Todo.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/tyroger/labo/xcSharp/todolist/Pages/Detail.cshtml",
       "TargetPath": "Pages\\Detail.cshtml",
       "FileKind": "mvc"

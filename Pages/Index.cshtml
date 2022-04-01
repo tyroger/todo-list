@@ -39,8 +39,8 @@
     @foreach (Todo todo in Model.todos)
                  {
                     <tr>
-                        @* <td>@Html.CheckBox("isTaskComplete",(todo.isTaskComplete))</td> *@
-                        <td><input type="checkbox" asp-for="NewTodo.isTaskComplete" class="mr-5"></td>
+                        <td>@Html.CheckBox("NewTodo.isTaskComplete",(todo.isTaskComplete))</td>
+                        @* <td><input type="checkbox" asp-for="NewTodo.isTaskComplete" class="mr-5"></td> *@
                         <td>@todo.Id</td>
                         <td>@todo.title</td>
                         <td>@(todo.isTaskComplete?"Complete":"Ongoing")</td>

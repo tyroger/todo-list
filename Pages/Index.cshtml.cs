@@ -17,13 +17,16 @@ public class IndexModel : PageModel
     [BindProperty]
     public Todo NewTodo { get; set; }
     public List<Todo> todos = new();
-    public void OnGet()
+
+    public IActionResult OnGet()
     {
         todos = TodoService.GetAllTodo();
 
+        return Page();
+
     }
 
-    public async Task<IActionResult> OnPostAsync()
+    public IActionResult OnPost()
     {
         if (!ModelState.IsValid)
         {

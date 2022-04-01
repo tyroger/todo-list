@@ -38,9 +38,4 @@ public class IndexModel : PageModel
 
         return RedirectToPage("./Index");
     }
-
-    public bool checkForTaskComplete(Todo todo)
-    {
-        if (todo.isTaskComplete) return true; return false;
-    }
 }

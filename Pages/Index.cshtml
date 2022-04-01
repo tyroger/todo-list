@@ -44,7 +44,7 @@
                         <td>@todo.Id</td>
                         <td>@todo.title</td>
                         <td>@(todo.isTaskComplete?"Complete":"Ongoing")</td>
-                        <td><a class="btn btn-outline-info btn-sm" asp-area="" asp-page="/Detail">More info</a></td>
+                        <td><a class="btn btn-outline-info btn-sm" asp-page="/Detail" asp-route-id="@todo.Id">More info</a></td>
                     </tr>
                  }
                 </tbody>
